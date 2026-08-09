@@ -1,126 +1,108 @@
 "use client";
-import React, { useState, useRef } from "react";
-import ProjectCard from "./ProjectCard";
-import ProjectTag from "./ProjectTag";
-import { motion, useInView } from "framer-motion";
 
-const projectsData = [
+import { motion } from "framer-motion";
+import ProjectCard from "./ProjectCard";
+
+const projects = [
   {
-    id: 1,
-    title: "Login, Dashboard and Register",
-    description: "Next JS . Chakra UI . Hook Form . Paginations",
-    image: "/images/projects/1.png",
-    tag: ["All", "Web"],
-    gitUrl: "/",
-    previewUrl: "/",
+    image: "/projects/previsiva.jpg",
+    title: "Previsiva",
+    description:
+      "AI-powered HR platform that identifies workplace risks, analyzes employee feedback and helps HR teams act before problems escalate.",
+    technologies: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "AI",
+      "Firebase",
+    ],
+    projectUrl: "#",
   },
   {
-    id: 2,
-    title: "Financial Control System",
-    description: "React . Styled Components . API . Miraje JS. Context",
-    image: "/images/projects/2.png",
-    tag: ["All", "Web"],
-    gitUrl: "/",
-    previewUrl: "/",
+    image: "/projects/amigo-secreto-top.jpg",
+    title: "Amigo Secreto Top",
+    description:
+      "Free Secret Santa platform that allows groups to create, organize and run online draws quickly without requiring user registration.",
+    technologies: [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "Responsive UI",
+    ],
+    projectUrl: "https://amigosecretotop.com.br",
   },
   {
-    id: 3,
-    title: "Kelner Website",
-    description: "Next JS . Tailwind CSS . Typescript . Firebase",
-    image: "/images/projects/3.png",
-    tag: ["All", "Web"],
-    gitUrl: "/",
-    previewUrl: "/",
+    image: "/projects/mediagamer.jpg",
+    title: "MediaGamer",
+    description:
+      "Brazilian game review aggregator that brings together scores from specialized media, generating consolidated ratings for each release.",
+    technologies: [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "Supabase",
+    ],
+    projectUrl: "https://mediagamer.com.br",
   },
   {
-    id: 4,
-    title: "Kelner Food Ordering Application",
-    description: "Next JS . Tailwind CSS . Typescript . Firebase",
-    image: "/images/projects/4.png",
-    tag: ["All", "Mobile"],
-    gitUrl: "/",
-    previewUrl: "/",
-  },
-  {
-    id: 5,
-    title: "Soccer World Cup Results",
-    description: "React Native . React . Expo . Express JS . Typescript",
-    image: "/images/projects/5.png",
-    tag: ["All", "Web", "Mobile"],
-    gitUrl: "/",
-    previewUrl: "/",
-  },
-  {
-    id: 6,
-    title: "Ig.News",
-    description: "Next JS . Stripe . Typescript . Next Auth . Fauna DB",
-    image: "/images/projects/6.png",
-    tag: ["All", "Web"],
-    gitUrl: "/",
-    previewUrl: "/",
+    image: "/projects/selinia.jpg",
+    title: "Selinia",
+    description:
+      "Modern SaaS platform for churches to manage members, contributions, invitations, approvals and administrative workflows.",
+    technologies: [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "Supabase",
+    ],
+    projectUrl: "#",
   },
 ];
 
 const ProjectsSection = () => {
-  const [tag, setTag] = useState("All");
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
-
-  const handleTagChange = (newTag) => {
-    setTag(newTag);
-  };
-
-  const filteredProjects = projectsData.filter((project) =>
-    project.tag.includes(tag)
-  );
-
-  const cardVariants = {
-    initial: { y: 50, opacity: 0 },
-    animate: { y: 0, opacity: 1 },
-  };
-
   return (
-    <section id="projects">
-      <h2 className="text-center text-4xl font-bold text-white mt-4 mb-8 md:mb-12">
-        Some Personal Projects
-      </h2>
-      <div className="text-white flex flex-row justify-center items-center gap-2 py-6">
-        <ProjectTag
-          onClick={handleTagChange}
-          name="All"
-          isSelected={tag === "All"}
-        />
-        <ProjectTag
-          onClick={handleTagChange}
-          name="Web"
-          isSelected={tag === "Web"}
-        />
-        <ProjectTag
-          onClick={handleTagChange}
-          name="Mobile"
-          isSelected={tag === "Mobile"}
-        />
+    <section
+      id="projects"
+      className="relative overflow-hidden bg-[#050816] py-20 sm:py-24"
+    >
+      {/* Background glow */}
+      <div className="pointer-events-none absolute inset-0">
+        <div className="absolute left-1/2 top-0 h-96 w-96 -translate-x-1/2 rounded-full bg-purple-600/[0.05] blur-[150px]" />
       </div>
-      <ul ref={ref} className="grid md:grid-cols-3 gap-8 md:gap-12">
-        {filteredProjects.map((project, index) => (
-          <motion.li
-            key={index}
-            variants={cardVariants}
-            initial="initial"
-            animate={isInView ? "animate" : "initial"}
-            transition={{ duration: 0.3, delay: index * 0.4 }}
-          >
-            <ProjectCard
-              key={project.id}
-              title={project.title}
-              description={project.description}
-              imgUrl={project.image}
-              gitUrl={project.gitUrl}
-              previewUrl={project.previewUrl}
-            />
-          </motion.li>
-        ))}
-      </ul>
+
+      <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-10">
+        {/* Section heading */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.45 }}
+        >
+          <span className="text-xs font-semibold uppercase tracking-[0.25em] text-purple-400">
+            Selected Work
+          </span>
+
+          <h2 className="mt-3 text-3xl font-bold tracking-tight text-white sm:text-4xl">
+            Featured{" "}
+            <span className="bg-gradient-to-r from-purple-400 to-fuchsia-400 bg-clip-text text-transparent">
+              Projects
+            </span>
+          </h2>
+
+          <p className="mt-4 max-w-2xl text-base leading-7 text-zinc-400">
+            Products I&apos;ve designed and developed to solve real-world
+            problems, combining modern front-end architecture, scalable
+            technologies and strong product thinking.
+          </p>
+        </motion.div>
+
+        {/* Projects */}
+        <div className="mt-10 grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
+          {projects.map((project) => (
+            <ProjectCard key={project.title} {...project} />
+          ))}
+        </div>
+      </div>
     </section>
   );
 };
