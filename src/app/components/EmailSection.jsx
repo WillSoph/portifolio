@@ -42,7 +42,7 @@ const EmailSection = () => {
               </p>
 
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                <Link
+                {/* <Link
                   href="mailto:wpessoal@outlook.com"
                   className="group inline-flex items-center justify-center gap-3 rounded-xl bg-gradient-to-r from-purple-600 to-fuchsia-600 px-6 py-3.5 text-sm font-semibold text-white shadow-[0_0_30px_rgba(168,85,247,0.18)] transition hover:-translate-y-0.5 hover:shadow-[0_0_40px_rgba(168,85,247,0.3)]"
                 >
@@ -64,7 +64,7 @@ const EmailSection = () => {
                       strokeLinejoin="round"
                     />
                   </svg>
-                </Link>
+                </Link> */}
 
                 <Link
                   href="https://www.linkedin.com/in/wf-desenvolvedor"
@@ -101,7 +101,7 @@ const EmailSection = () => {
               className="lg:border-l lg:border-white/[0.08] lg:pl-10"
             >
               <div className="space-y-6">
-                <ContactItem
+                {/* <ContactItem
                   title="Email"
                   value="wpessoal@outlook.com"
                   href="mailto:wpessoal@outlook.com"
@@ -122,7 +122,7 @@ const EmailSection = () => {
                       />
                     </svg>
                   }
-                />
+                /> */}
 
                 <ContactItem
                   title="Location"

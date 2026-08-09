@@ -127,7 +127,7 @@ const HeroSection = () => {
               }
             />
 
-            <SocialLink
+            {/* <SocialLink
               href="mailto:wpessoal@outlook.com"
               label="E-mail"
               icon={
@@ -147,7 +147,7 @@ const HeroSection = () => {
                   />
                 </svg>
               }
-            />
+            /> */}
           </div>
         </motion.div>
 

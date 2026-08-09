@@ -92,7 +92,7 @@ const Footer = () => {
               </svg>
             </SocialLink>
 
-            <SocialLink
+            {/* <SocialLink
               href="mailto:wpessoal@outlook.com"
               label="Email"
               external={false}
@@ -112,7 +112,7 @@ const Footer = () => {
                   strokeLinejoin="round"
                 />
               </svg>
-            </SocialLink>
+            </SocialLink> */}
           </div>
         </div>
       </div>
